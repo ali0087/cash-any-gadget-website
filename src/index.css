@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-gold-300 text-ink-800 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-display tracking-tight text-navy-800;
+    text-wrap: balance;
+  }
+  ::selection {
+    @apply bg-navy-800 text-gold-300;
+  }
+}
+
+@layer utilities {
+  .container-px {
+    @apply px-5 sm:px-8 lg:px-12;
+  }
+  .section-py {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+  /* Primary button — deep navy with white text */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-navy-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-navy-900 hover:shadow-lift active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-navy-800/30 bg-white px-5 py-3 text-sm font-semibold text-navy-800 transition-all duration-200 hover:border-navy-800 hover:bg-gold-100 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-500;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white;
+  }
+  /* Accent button — warm yellow with deep navy text */
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold-300 px-5 py-3 text-sm font-semibold text-navy-800 shadow-sm transition-all duration-200 hover:bg-gold-200 hover:shadow-lift active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400;
+  }
+  .card {
+    @apply rounded-xl border border-gold-500/40 bg-white shadow-card transition-all duration-300;
+  }
+  .input {
+    @apply w-full rounded-lg border border-gold-500/50 bg-white px-3.5 py-2.5 text-sm text-ink-800 placeholder:text-ink-400 transition-colors focus:border-navy-500 focus:outline-none focus:ring-2 focus:ring-navy-500/20;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-navy-800;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-display text-3xl font-extrabold uppercase tracking-[0.04em] text-gold-600 sm:text-4xl;
+  }
+  .divider {
+    @apply h-px w-full bg-gold-500/40;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Select dropdown options — solid navy background, white text, gold hover */
+select.input option {
+  background-color: #142B3B;
+  color: #FFFFFF;
+}
+select.input option:checked,
+select.input option:hover,
+select.input option:focus {
+  background-color: #F9D94A;
+  color: #142B3B;
+}
